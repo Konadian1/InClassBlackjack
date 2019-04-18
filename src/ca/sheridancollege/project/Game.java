@@ -1,64 +1,55 @@
-/**
- * SYST 17796 Project Winter 2019 Base code.
- * Students can modify and extend to implement their game.
- * Add your name as a modifier and the date!
- */
 package ca.sheridancollege.project;
 
-import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
- * The class that models your game. You should create a more specific
- * child of this class and instantiate the methods given.
+ * The class that models your game. You should create a more specific child of
+ * this class and instantiate the methods given.
+ *
  * @author dancye, 2018
  */
-public abstract class Game 
-{
-    private final String gameName;//the title of the game
-    private ArrayList <Player> players;// the players of the game
-    
-    public Game(String givenName)
-    {
-        gameName = givenName;
-        players = new ArrayList();
+public abstract class Game {
+
+    private String playerName;
+    Scanner in = new Scanner(System.in);
+
+    /**
+     * the players of the game
+     *
+     * @param givenName
+     */
+    public Game(String givenName) {
+        // TODO - implement Game.Game
+        throw new UnsupportedOperationException();
+        
     }
 
     /**
-     * @return the gameName
+     * Play the game. This might be one method or many method calls depending on
+     * your game.
      */
-    public String getGameName() 
-    {
-        return gameName;
-    }
+    public abstract void play();{
     
-     /**
-     * @return the players of this game
-     */
-    public ArrayList <Player> getPlayers() 
-    {
-        return players;
-    }
-
-    /**
-     * @param players the players of this game
-     */
-    public void setPlayers(ArrayList <Player> players) 
-    {
-        this.players = players;
-    }
     
-    /**
-     * Play the game. This might be one method or many method calls depending
-     * on your game.
-     */
-    public abstract void play();
-    
+}
     /**
      * When the game is over, use this method to declare and display a winning
      * player.
      */
     public abstract void declareWinner();
 
-   
-    
-}//end class
+//	public void getPlayers() {
+//		// TODO - implement Game.getPlayers
+//		throw new UnsupportedOperationException();
+//	}
+    public void SetPlayerName() {
+        System.out.println("Please enter your name: ");
+        playerName = in.nextLine();
+    }
+
+    public String getPlayerName() {
+
+        return playerName;
+    }
+
+}
