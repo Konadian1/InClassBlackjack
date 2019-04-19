@@ -6,17 +6,19 @@ package ca.sheridancollege.project;
  * should remember to add themselves as a modifier.
  * @author dancye, 2018
  */
-public abstract class Card {
+public  class Card {
 
 	private int value;
 	private String suite;
-
+        public enum Suit {HEART, DIAMOND,CLUB,SPADE};
+        public enum Value{ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, 
+        NINE, TEN, JACK, QUEEN, KING };
 	/**
 	 * Students should implement this method for their specific children classes
 	 * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
 	 */
-	@Override
-	public abstract String toString();
+	//@Override
+	//public abstract String toString();
 
 	public Card() {
 		// TODO - implement Card.Card
@@ -28,7 +30,7 @@ public abstract class Card {
 	 * @param number
 	 * @param name
 	 */
-	public Card(int number, String name) {
+	public Card(Suit s, Value v) {
 		// TODO - implement Card.Card
 		throw new UnsupportedOperationException();
 	}
@@ -39,7 +41,8 @@ public abstract class Card {
 
 	public String getSuit() {
 		// TODO - implement Card.getSuit
-		throw new UnsupportedOperationException();
+                return this.suite;
+		
 	}
 
 	public String showCard() {

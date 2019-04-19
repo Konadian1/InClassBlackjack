@@ -24,6 +24,8 @@ public class GroupOfCards extends Card{
     private ArrayList<Card> discard;
     private int size;//the size of the grouping
 
+    //Card []card = new Card[52];
+    
     public GroupOfCards(int givenSize) {
         size = givenSize;
     }

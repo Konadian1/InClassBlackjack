@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @author dancye, 2018
  */
 public  class Player {
-private GroupOfCards playerA;
+private GroupOfCards playerAGroupOfCards;
 	private String playerID;
 
 	public String getPlayerID() {
@@ -34,7 +34,6 @@ private GroupOfCards playerA;
 	public void play(){
             Scanner input = new Scanner(System.in);
         
-
             // if user inputs something other then y/n have them try again
             System.out.println("Would you like extra cards(Y/N)");
             String extraCard = input.nextLine();
@@ -59,7 +58,7 @@ private GroupOfCards playerA;
             // if player chooses yes deal them
             if(extraCard.equalsIgnoreCase("y")){
             
-            playerA.deal();
+            playerAGroupOfCards.deal();
             }
             else if(extraCard.equalsIgnoreCase("n")){
             // do something
