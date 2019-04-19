@@ -24,7 +24,7 @@ private GroupOfCards playerA;
 	 */
 	public Player(String name) {
 		// TODO - implement Player.Player
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -34,21 +34,37 @@ private GroupOfCards playerA;
 	public void play(){
             Scanner input = new Scanner(System.in);
         
+
+            // if user inputs something other then y/n have them try again
             System.out.println("Would you like extra cards(Y/N)");
             String extraCard = input.nextLine();
-            // while user inputs something other then y/n have them try again
-            while(!extraCard.equalsIgnoreCase("y") || !extraCard.equalsIgnoreCase("n")){
+            while(true){
+
+            if(extraCard.equalsIgnoreCase("y")){
+                break;
+                }
+            if(extraCard.equalsIgnoreCase("n")){
+                 break;
+                }
             System.out.println("Invalid Input please try again(Y/N)");
             extraCard = input.nextLine();
+                if(extraCard.equalsIgnoreCase("y")){
+                     break;
+                    }
+                if(extraCard.equalsIgnoreCase("n")){
+                     break;
+                    }
              }
-            // if player chooses yes deal them 2 cards
+            
+            // if player chooses yes deal them
             if(extraCard.equalsIgnoreCase("y")){
+            
             playerA.deal();
             }
-//            else{
-//            System.out.println("Invalid input please try again(Y/N)");
-//            extraCard = input.nextLine();
-//            }
+            else if(extraCard.equalsIgnoreCase("n")){
+            // do something
+            }
+                
         }
 
 }

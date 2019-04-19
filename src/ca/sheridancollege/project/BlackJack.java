@@ -13,6 +13,7 @@ public class BlackJack {
 public static void main(String[] args){
 
 Player playerA = new Player("obada");
+playerA.play();
 
 
 }

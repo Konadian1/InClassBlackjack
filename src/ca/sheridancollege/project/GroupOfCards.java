@@ -15,7 +15,7 @@ import java.util.Collections;
  *
  * @author dancye
  */
-public class GroupOfCards {
+public class GroupOfCards extends Card{
 
     //The group of main, stored in an ArrayList
     private ArrayList<Card> main;
@@ -80,5 +80,7 @@ public class GroupOfCards {
         // TODO - implement GroupOfCards.empty
         throw new UnsupportedOperationException();
     }
-
+    public String toString(){
+        return "";
+    }
 }//end class
