@@ -14,10 +14,6 @@ private GroupOfCards playerAGroupOfCards;
 		return this.playerID;
 	}
 
-	public void setPlayerID(String playerID) {
-		this.playerID = playerID;
-	}
-
 	/**
 	 * A constructor that allows you to set the player's unique ID
 	 * @param name the unique ID to assign to this player.

@@ -9,7 +9,7 @@ package ca.sheridancollege.project;
 public  class Card {
 
 	private int value;
-	private String suite;
+	private String suit;
         public enum Suit {HEART, DIAMOND,CLUB,SPADE};
         public enum Value{ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, 
         NINE, TEN, JACK, QUEEN, KING };
@@ -41,13 +41,12 @@ public  class Card {
 
 	public String getSuit() {
 		// TODO - implement Card.getSuit
-                return this.suite;
+                return this.suit;
 		
 	}
 
-	public String showCard() {
-		// TODO - implement Card.showCard
-		throw new UnsupportedOperationException();
+	public String showCard() {	
+            throw new UnsupportedOperationException();
 	}
 
 }

@@ -21,7 +21,6 @@ public class GroupOfCards extends Card{
     private ArrayList<Card> main;
     private ArrayList<Card> player;
     private ArrayList<Card> dealer;
-    private ArrayList<Card> discard;
     private int size;//the size of the grouping
 
     //Card []card = new Card[52];
@@ -59,6 +58,18 @@ public class GroupOfCards extends Card{
         main.remove(0);
         dealer.add(main.get(0));
         main.remove(0);
+    }
+    public void hit() {
+        player.add(main.get(0));
+        main.remove(0);
+        
+    }
+    public int currentTotal(){
+        int total = 0;
+        for(int e=0; e>player.size(); e++){
+            player.;
+        }
+        return total;
     }
 
     /**
