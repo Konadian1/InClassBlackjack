@@ -6,47 +6,33 @@ package ca.sheridancollege.project;
  * should remember to add themselves as a modifier.
  * @author dancye, 2018
  */
-public  class Card {
+public class Card {
 
-	private int value;
-	private String suit;
-        public enum Suit {HEART, DIAMOND,CLUB,SPADE};
+        public enum Suit{HEART, DIAMOND, CLUB, SPADE};
         public enum Value{ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, 
         NINE, TEN, JACK, QUEEN, KING };
-	/**
-	 * Students should implement this method for their specific children classes
-	 * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
-	 */
-	//@Override
-	//public abstract String toString();
+        private final Suit suit;
+        private final Value value;
 
-	public Card() {
-		// TODO - implement Card.Card
-		throw new UnsupportedOperationException();
-	}
 
-	/**
-	 * 
-	 * @param number
-	 * @param name
-	 */
-	public Card(Suit s, Value v) {
-		// TODO - implement Card.Card
-		throw new UnsupportedOperationException();
-	}
 
-	public int getValue() {
-		return this.value;
+	public Card(Suit s, Value val) {
+		suit = s;
+                value = val;
 	}
+        
 
-	public String getSuit() {
-		// TODO - implement Card.getSuit
-                return this.suit;
-		
-	}
 
-	public String showCard() {	
-            throw new UnsupportedOperationException();
-	}
+//	public String showCard() {	
+//           throw new UnsupportedOperationException();
+//	}
+
+    public Suit getSuit() {
+        return suit;
+    }
+
+    public Value getValue() {
+        return value;
+    }
 
 }

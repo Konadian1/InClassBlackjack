@@ -1,7 +1,6 @@
 /*
  * Obada Alasali
  * Student ID: 991404478
- * SYST10199 - Web Programming
  */
 package ca.sheridancollege.project;
 
@@ -11,9 +10,19 @@ package ca.sheridancollege.project;
  */
 public class BlackJack {
 public static void main(String[] args){
-
-Player playerA = new Player("obada");
-playerA.play();
+    
+    GroupOfCards ch = new GroupOfCards();
+                    //create 52 Cards
+                ch.createDeck();
+                
+                
+                for(Card c: ch.deck)
+                {
+                    System.out.println(c.getValue() + " of " + c.getSuit());
+                }
+               System.out.println(ch.deck);// show what happens when there is no toString()
+    Player playerA = new Player("obada");
+    playerA.play();
 
 
 }

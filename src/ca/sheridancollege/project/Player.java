@@ -6,27 +6,21 @@ import java.util.Scanner;
  * A class that models each Player in the game. Players have an identifier, which should be unique.
  * @author dancye, 2018
  */
-public  class Player {
-private GroupOfCards playerAGroupOfCards;
+public class Player {
+    
+        private GroupOfCards deck = new GroupOfCards();
 	private String playerID;
 
 	public String getPlayerID() {
 		return this.playerID;
 	}
 
-	/**
-	 * A constructor that allows you to set the player's unique ID
-	 * @param name the unique ID to assign to this player.
-	 */
+
 	public Player(String name) {
-		// TODO - implement Player.Player
-		//throw new UnsupportedOperationException();
+		playerID = name;
+		
 	}
 
-	/**
-	 * The method to be instantiated when you subclass the Player class
-	 * with your specific type of Player and filled in with logic to play your game.
-	 */
 	public void play(){
             Scanner input = new Scanner(System.in);
         
@@ -53,8 +47,8 @@ private GroupOfCards playerAGroupOfCards;
             
             // if player chooses yes deal them
             if(extraCard.equalsIgnoreCase("y")){
-            
-            playerAGroupOfCards.deal();
+                
+            deck.hit();
             }
             else if(extraCard.equalsIgnoreCase("n")){
             // do something

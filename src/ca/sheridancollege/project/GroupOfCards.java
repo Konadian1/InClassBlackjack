@@ -15,74 +15,82 @@ import java.util.Collections;
  *
  * @author dancye
  */
-public class GroupOfCards extends Card{
+public class GroupOfCards {
 
     //The group of main, stored in an ArrayList
-    private ArrayList<Card> main;
+    public ArrayList<Card> deck = new ArrayList<Card>();
     private ArrayList<Card> player;
     private ArrayList<Card> dealer;
+    private int handSize = 52;
+   //public Card[] cards = new Card[handSize];
     private int size;//the size of the grouping
-
-    //Card []card = new Card[52];
     
     public GroupOfCards(int givenSize) {
-        size = givenSize;
+        
+        handSize = givenSize;
     }
+   
+    public ArrayList<Card> createDeck(){  
+        
+    for(int countCards = 0;countCards < handSize;countCards++){
+    for(Card.Suit c: Card.Suit.values())
+     {
+     for(Card.Value v: Card.Value.values())
+     {
 
-    /**
-     * A method that will get the group of main as an ArrayList
-     *
-     * @return the group of main.
-     */
+      deck.add(new Card(c,v));
+    
+       }
+       }//end outter for
+    
+    }   
+    return deck;
+    }
+    
+  
     public ArrayList<Card> showCards() {
-        return main;
+        return deck;
     }
 
     public void shuffle() {
-        Collections.shuffle(main);
+        Collections.shuffle(deck);
     }
 
-    /**
-     * @return the size of the group of main
-     */
+ 
     public int getSize() {
         return size;
     }
 
     public void deal() {
-        player.add(main.get(0));
-        main.remove(0);
-        player.add(main.get(0));
-        main.remove(0);
-        dealer.add(main.get(0));
-        main.remove(0);
-        dealer.add(main.get(0));
-        main.remove(0);
+        player.add(deck.get(0));
+        deck.remove(0);
+        player.add(deck.get(0));
+        deck.remove(0);
+        dealer.add(deck.get(0));
+        deck.remove(0);
+        dealer.add(deck.get(0));
+        deck.remove(0);
     }
     public void hit() {
-        player.add(main.get(0));
-        main.remove(0);
+        createDeck();
+        player.add(deck.get(0));
+        deck.remove(0);
         
     }
     public int currentTotal(){
         int total = 0;
         for(int e=0; e>player.size(); e++){
-            player.;
+          //  player.addTotal(); //get total value of player hand
         }
         return total;
     }
 
-    /**
-     * @param givenSize the max size for the group of main
-     */
+
     public void setSize(int givenSize) {
         size = givenSize;
     }
 
-    public GroupOfCards() {
-        // TODO - implement GroupOfCards.GroupOfCards
-        throw new UnsupportedOperationException();
-    }
+    public GroupOfCards() {}
 
     public Card nextCard() {
         // TODO - implement GroupOfCards.nextCard

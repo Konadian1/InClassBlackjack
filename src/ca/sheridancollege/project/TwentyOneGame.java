@@ -17,7 +17,7 @@ public class TwentyOneGame extends Game {
     int wins;
     int losses;
     int doneTotal;
-    boolean continue;
+    boolean cont;
     public TwentyOneGame(String givenName) {
         // TODO - implement Game.Game
         super(givenName);
@@ -31,13 +31,13 @@ public class TwentyOneGame extends Game {
         setPlayerName(input.nextLine());
         GroupOfCards newGame = new GroupOfCards();
         newGame.deal();
-        while (continue == true){
+        while (cont == true){
         System.out.println("You currently have "+newGame.currentTotal());
         if(Turn()==true){
          newGame.hit();   
         }
         else{
-            continue = false;
+            cont = false;
         }
     }
             doneTotal = newGame.currentTotal();
